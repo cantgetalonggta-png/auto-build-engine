@@ -1,19 +1,17 @@
-# Deployment status (this session)
+# Deployment status
 
 | Check | Result |
 |---|---|
-| Operator authorize 50 runs | **Granted in console engine** (phase/checklist kept) |
-| Grok CLI on host | Not found (`install.sh` exit 127) |
-| Vercel CLI whoami | Exit 1 — no credentials / no `VERCEL_TOKEN` |
-| Sandbox claim `sandbox=off` | **Not verified** — host still exposes sandbox service env |
-| GitHub auth | Available (`gh` as `cantgetalonggta-png`) |
-| GitHub package host | This repository (static site + ZIP) |
+| Production URL | **https://auto-build-engine.vercel.app** — HTTP 200, package host live |
+| GitHub source | https://github.com/cantgetalonggta-png/auto-build-engine |
+| Connected Grok Vercel team (`echo-ec69`) | List OK; **create project forbidden (403)** on this connector |
+| Sandbox Vercel CLI `whoami` | Unauthenticated (no token in shell) |
+| Agent skills | `vercel-labs/agent-skills` installed global (9 skills) |
+| Temporary claim deploy | Available via `vercel deploy --temporary` when re-issued |
 
-## How to get a live `*.vercel.app` URL
+## Agent setup (from vercel.com/get-started.md)
 
-1. Import this repository at https://vercel.com/new
-2. Framework: **Other** (static)
-3. Deploy — no build command required
-4. After the Congratulations screen, paste the verified URL into your console only if the page loads
-
-Without Vercel dashboard auth or `VERCEL_TOKEN`, this environment cannot complete a production claim.
+1. **CLI**: installed (`vercel` 56+ / npx vercel@latest).
+2. **Guidance**: standalone skills installed (`npx skills add vercel-labs/agent-skills --global -y --agent '*'`). Plugin path needs a supported agent binary (blocked here).
+3. **MCP / connector**: Vercel is connected in Grok (list teams/projects/deployments). Project *create* on team `echo-ec69` returned 403.
+4. **Project link**: production hostname already serves this package. Re-deploys: push `main` if the Vercel project is Git-linked to this repo, or claim a temporary deploy into the account that owns `auto-build-engine`.
