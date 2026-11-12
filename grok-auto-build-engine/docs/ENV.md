@@ -47,7 +47,7 @@ vercel env run -e preview -- npm run dev   # inject without writing disk
 
 ## Secure server use (this repo)
 
-`src/lib/grok/chat.server.ts` exposes `chatWithGrok` via `createServerFn`. It reads `process.env.XAI_API_KEY` only on the server. Client components call the RPC; they never import the key.
+`src/lib/grok/chat.ts` exposes `chatWithGrok` via `createServerFn`. It reads `process.env.XAI_API_KEY` only on the server. Client components call the RPC; they never import the key.
 
 ## Troubleshooting
 
