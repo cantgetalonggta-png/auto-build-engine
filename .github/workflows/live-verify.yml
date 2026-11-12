@@ -1,0 +1,31 @@
+name: live-verify-taskforce
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+jobs:
+  verify-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: HTTP probe production package host
+        run: |
+          set -e
+          URL=https://auto-build-engine.vercel.app
+          code=$(curl -sS -o /tmp/body -w "%{http_code}" "$URL/")
+          echo "HTTP $code"
+          test "$code" = "200"
+          grep -qi "Auto-Build Engine" /tmp/body
+          for path in ENV.md install.sh .env.example grok-auto-build-engine/plugin.json; do
+            c=$(curl -sS -o /dev/null -w "%{http_code}" "$URL/$path")
+            echo "$path -> $c"
+            test "$c" = "200"
+          done
+      - name: GitHub raw ENV.md
+        run: |
+          code=$(curl -sS -o /tmp/env.md -w "%{http_code}" \
+            https://raw.githubusercontent.com/cantgetalonggta-png/auto-build-engine/main/ENV.md)
+          echo "ENV.md raw HTTP $code"
+          test "$code" = "200"
+          grep -q "Config vs Secret" /tmp/env.md

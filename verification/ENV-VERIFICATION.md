@@ -1,0 +1,299 @@
+# Environment load & verify report
+
+```json
+{
+  "generated_at": "2026-11-12T23:03:48.343990Z",
+  "vercel_cli": {
+    "authenticated": false,
+    "whoami": "No existing credentials found",
+    "project_linked": false,
+    "env_ls": false,
+    "env_pull": false
+  },
+  "workspace": {
+    "is_preview": true,
+    "GROK_SANDBOX_PROFILE": "off",
+    "app_env": {
+      "VITE_AUTH_ENABLED": "false",
+      "deploy": {
+        "database": false
+      }
+    }
+  },
+  "inventory_verification": [
+    {
+      "key": "XAI_API_KEY",
+      "type": "secret",
+      "required": true,
+      "in_process": true,
+      "in_env_local": false,
+      "in_env_example": true,
+      "vercel_pull": false
+    },
+    {
+      "key": "XAI_MODEL",
+      "type": "config",
+      "required": false,
+      "in_process": false,
+      "in_env_local": false,
+      "in_env_example": true,
+      "vercel_pull": false
+    },
+    {
+      "key": "XAI_BASE_URL",
+      "type": "config",
+      "required": false,
+      "in_process": false,
+      "in_env_local": false,
+      "in_env_example": true,
+      "vercel_pull": false
+    },
+    {
+      "key": "GROK_CHAT_ENABLED",
+      "type": "config",
+      "required": false,
+      "in_process": false,
+      "in_env_local": false,
+      "in_env_example": true,
+      "vercel_pull": false
+    },
+    {
+      "key": "VITE_AUTH_ENABLED",
+      "type": "config",
+      "required": false,
+      "in_process": false,
+      "in_env_local": false,
+      "in_env_example": true,
+      "vercel_pull": false
+    },
+    {
+      "key": "GROK_PROJECT_ID",
+      "type": "config",
+      "required": false,
+      "in_process": false,
+      "in_env_local": false,
+      "in_env_example": false,
+      "vercel_pull": false
+    },
+    {
+      "key": "VERCEL_TOKEN",
+      "type": "secret",
+      "required": false,
+      "in_process": false,
+      "in_env_local": false,
+      "in_env_example": false,
+      "vercel_pull": false
+    }
+  ],
+  "process_relevant_env": [
+    {
+      "key": "GROK_AGENT",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "1"
+    },
+    {
+      "key": "GROK_CLI_CHAT_PROXY_BASE_URL",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "https://cli-chat-proxy.grok.com/v1"
+    },
+    {
+      "key": "GROK_REVIVE_SCRIPT_CONFIGURED",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "true"
+    },
+    {
+      "key": "GROK_SANDBOX_PROFILE",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "off"
+    },
+    {
+      "key": "GROK_SERVER_KEY",
+      "kind": "secret",
+      "present": true,
+      "len": 32,
+      "value": null
+    },
+    {
+      "key": "GROK_SESSION_ID",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "104230d7-486a-55a6-9182-57cfd490f27e"
+    },
+    {
+      "key": "GROK_SESSION_RESTORED",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "true"
+    },
+    {
+      "key": "GROK_WORKSPACE_BUNDLED_SKILLS_DIR",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "/usr/share/grok/bundled-skills"
+    },
+    {
+      "key": "GROK_WORKSPACE_DATA_COLLECTION_DISABLED",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "false"
+    },
+    {
+      "key": "GROK_WORKSPACE_HUB_CONNECT_DEADLINE_SECS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "45"
+    },
+    {
+      "key": "GROK_WORKSPACE_HUB_CONNECT_HEDGE_AFTER_SECS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "3"
+    },
+    {
+      "key": "GROK_WORKSPACE_IDLE_IGNORE_BACKGROUND_TASKS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "true"
+    },
+    {
+      "key": "GROK_WORKSPACE_PRESENCE_KEEPALIVE_ENABLED",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "true"
+    },
+    {
+      "key": "GROK_WORKSPACE_PREVIEW_ACTIVITY_SCRAPE_INTERVAL_MS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "10000"
+    },
+    {
+      "key": "GROK_WORKSPACE_PREVIEW_ACTIVITY_WINDOW_MS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "60000"
+    },
+    {
+      "key": "GROK_WORKSPACE_PREVIEW_HOLDS_ENABLED",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "true"
+    },
+    {
+      "key": "GROK_WORKSPACE_PREVIEW_STATE_REPORTER_ENABLED",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "true"
+    },
+    {
+      "key": "GROK_WORKSPACE_PREVIEW_STATE_WAIT_SECS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "15"
+    },
+    {
+      "key": "GROK_WORKSPACE_RPC_ACTIVITY_WINDOW_MS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "60000"
+    },
+    {
+      "key": "GROK_WORKSPACE_SERVER_SKILLS_DIR",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "/root/.grok/server-skills"
+    },
+    {
+      "key": "GROK_WORKSPACE_SESSION_IDLE_PRUNE_SECS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "1800"
+    },
+    {
+      "key": "GROK_WORKSPACE_SHARED_CHROME",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "false"
+    },
+    {
+      "key": "GROK_WORKSPACE_WS_PING_SECS",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "10"
+    },
+    {
+      "key": "GROVE_TOKEN_ROTATION",
+      "kind": "secret",
+      "present": true,
+      "len": 8,
+      "value": null
+    },
+    {
+      "key": "VITE_DEV_SERVER_HOST",
+      "kind": "config-or-runtime",
+      "present": true,
+      "len": null,
+      "value": "0.0.0.0"
+    },
+    {
+      "key": "XAI_API_KEY",
+      "kind": "secret",
+      "present": true,
+      "len": 84,
+      "value": null
+    }
+  ],
+  "files": {
+    "env_example": true,
+    "env_local": false,
+    "env_catalog_ts": true,
+    "chat_ts": true,
+    "package_env_md": true
+  },
+  "production_host": {
+    "url": "https://auto-build-engine.vercel.app",
+    "http": 200,
+    "note": "Static package host; project env for that site is owned in Vercel dashboard and was not pullable without CLI auth."
+  },
+  "xai_live": {
+    "key_present": true,
+    "last_known_error": "403 personal-team-blocked:spending-limit"
+  },
+  "blockers": [
+    "Vercel CLI unauthenticated \u2014 cannot list/pull/add project env vars from this shell.",
+    "No .vercel/project.json link to a Vercel project.",
+    "XAI_API_KEY present in sandbox process but xAI API returns spending-limit until credits restored."
+  ],
+  "next_actions": [
+    "Provide VERCEL_TOKEN or complete vercel login + vercel link.",
+    "Or set Secrets/Config in Vercel dashboard for the target project and redeploy.",
+    "Restore xAI credits for live chat probe."
+  ]
+}
+```
