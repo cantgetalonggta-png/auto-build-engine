@@ -1,0 +1,16 @@
+{
+  "name": "grok-auto-build-engine",
+  "version": "2.2.0",
+  "description": "Local autonomous construction, debugging, testing, verification, checkpointing, and deployment workflow for Grok Build.",
+  "author": "Operator-configured",
+  "entry_skill": "skills/build/SKILL.md",
+  "requested_preferences": {
+    "reasoning_effort": "highest_supported_by_active_model",
+    "autonomy": "continue_in_scope_work_without_redundant_confirmation",
+    "successive_runs_per_objective": 5,
+    "resume_command": "/build continue",
+    "deployment": "already-authenticated Vercel CLI only"
+  },
+  "capabilities_granted_by_this_manifest": [],
+  "host_controls": "Grok Build controls tool access, authentication, permissions, sandboxing, model effort, time, and token limits."
+}

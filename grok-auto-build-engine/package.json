@@ -1,0 +1,13 @@
+{
+  "name": "grok-auto-build-engine",
+  "version": "2.2.0",
+  "private": true,
+  "description": "Grok Build plugin for autonomous project construction, testing, debugging, and checkpointed continuation.",
+  "main": "src/core-engine.js",
+  "scripts": {
+    "validate": "node src/core-engine.js self-test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

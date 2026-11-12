@@ -1,0 +1,5 @@
+{
+  "name": "grok-auto-build-engine",
+  "version": "2.2.0",
+  "description": "Autonomous project construction, debugging, testing, verification, checkpointing, and authorized deployment workflow for Grok Build."
+}

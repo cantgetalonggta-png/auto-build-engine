@@ -1,0 +1,16 @@
+{
+  "workflow": "inspect_plan_implement_test_debug_verify_checkpoint",
+  "reasoning_effort_preference": "highest_supported_by_active_model",
+  "max_runs_requested_per_objective": 5,
+  "run_counter_state_field": "runs_used",
+  "continue_command": "/build continue",
+  "approval_behavior": "do_not_interrupt_for_routine_in_scope_work; defer only when a genuine authorization, access, or irreversible-scope decision is required",
+  "error_handling": "diagnose_fix_retest_and_record; never hide failed checks",
+  "resume_state": "${GROK_HOME:-$HOME/.grok}/artifacts/auto-build-engine/<project-id>/state.json",
+  "vercel": {
+    "mode": "already_authenticated_cli_only",
+    "configure_connector_or_oauth": false,
+    "require_verified_deployment_result": true
+  },
+  "host_limits_apply": true
+}

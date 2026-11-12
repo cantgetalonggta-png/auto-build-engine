@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grok Auto-Build Engine 2.2.0</title>
+  <meta name="description" content="Installable Grok Build plugin: /build, five-to-fifty run checkpoints, install gate, honest deploy." />
+  <style>
+    :root { color-scheme: dark; --bg:#12100e; --fg:#f3ecdf; --muted:#a89b8c; --copper:#e08a3c; --line:#3a342c; --surface:#1c1915; }
+    * { box-sizing: border-box; }
+    body { margin:0; font: 16px/1.5 system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+    main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    h1 { font-size: 1.75rem; margin: 0 0 .5rem; }
+    .tag { color: var(--copper); font: 12px/1.2 ui-monospace, monospace; letter-spacing: .08em; }
+    p { color: var(--muted); }
+    .card { border:1px solid var(--line); background:var(--surface); border-radius: .75rem; padding: 1rem 1.1rem; margin: 1rem 0; }
+    a.btn { display:inline-flex; align-items:center; gap:.5rem; min-height:44px; padding:.6rem 1rem; background:var(--copper); color:#2a1608; font-weight:600; text-decoration:none; border-radius:.375rem; }
+    a.btn.secondary { background: transparent; color: var(--fg); border:1px solid var(--line); }
+    code { font-family: ui-monospace, monospace; font-size: .9em; color: var(--fg); }
+    ul { padding-left: 1.2rem; color: var(--muted); }
+    li { margin: .35rem 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="tag">PLUGIN 2.2.0 · LIVE PACKAGE HOST</p>
+    <h1>Grok Auto-Build Engine</h1>
+    <p>Installable <code>/build</code> skill with checkpointed continuation. Operator can authorize a 50-run budget while phase and checklist stay intact. Production deploy still requires an authenticated Vercel target.</p>
+    <div class="card">
+      <p style="margin:0 0 .75rem; color:var(--fg)"><strong>Install on a machine with Grok Build CLI</strong></p>
+      <ol style="color:var(--muted); margin:0; padding-left:1.2rem">
+        <li>Download the ZIP or clone this repository.</li>
+        <li>Enter the package root and run <code>./install.sh</code>.</li>
+        <li>Use <code>/build <objective></code> or <code>/build continue</code>.</li>
+      </ol>
+    </div>
+    <p style="display:flex; flex-wrap:wrap; gap:.5rem">
+      <a class="btn" href="./Grok-Auto-Build-Engine.zip">Download ZIP</a>
+      <a class="btn secondary" href="./install.sh">install.sh</a>
+      <a class="btn secondary" href="./grok-auto-build-engine/plugin.json">plugin.json</a>
+      <a class="btn secondary" href="./grok-auto-build-engine/skills/build/SKILL.md">SKILL.md</a>
+    </p>
+    <div class="card">
+      <p style="margin:0 0 .5rem; color:var(--fg)"><strong>Checkpoint budget</strong></p>
+      <ul>
+        <li>Default budget: 5 runs per objective.</li>
+        <li>Operator may authorize another 50 runs; phase and checklist are kept; <code>runs_used</code> resets to 0.</li>
+        <li>Install checks do not spend a run. Finish-with-limitation does not spend a run.</li>
+        <li>A production URL is claimed only after a verified live deployment.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
