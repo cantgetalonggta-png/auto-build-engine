@@ -17,11 +17,14 @@ jobs:
           echo "HTTP $code"
           test "$code" = "200"
           grep -qi "Auto-Build Engine" /tmp/body
-          for path in ENV.md install.sh .env.example grok-auto-build-engine/plugin.json; do
+          for path in ENV.md install.sh env.example grok-auto-build-engine/plugin.json; do
             c=$(curl -sS -o /dev/null -w "%{http_code}" "$URL/$path")
             echo "$path -> $c"
             test "$c" = "200"
           done
+          # Dotfile may be withheld by static host; record only
+          c=$(curl -sS -o /dev/null -w "%{http_code}" "$URL/.env.example" || true)
+          echo ".env.example -> $c (informational; Vercel may hide dotfiles)"
       - name: GitHub raw ENV.md
         run: |
           code=$(curl -sS -o /tmp/env.md -w "%{http_code}" \
